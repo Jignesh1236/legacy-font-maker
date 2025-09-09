@@ -1,0 +1,380 @@
+
+{
+  "rules": [
+    {
+      "sourceChar": "A",
+      "targetChar": "બ",
+      "caseSensitive": true
+    },
+    {
+      "sourceChar": "B",
+      "targetChar": "ખ",
+      "caseSensitive": true
+    },
+    {
+      "sourceChar": "C",
+      "targetChar": "ચ",
+      "caseSensitive": true
+    },
+    {
+      "sourceChar": "D",
+      "targetChar": "મ",
+      "caseSensitive": true
+    },
+    {
+      "sourceChar": "E",
+      "targetChar": "બ",
+      "caseSensitive": true
+    },
+    {
+      "sourceChar": "F",
+      "targetChar": "ત",
+      "caseSensitive": true
+    },
+    {
+      "sourceChar": "G",
+      "targetChar": "ન",
+      "caseSensitive": true
+    },
+    {
+      "sourceChar": "H",
+      "targetChar": "જ",
+      "caseSensitive": true
+    },
+    {
+      "sourceChar": "I",
+      "targetChar": "ય",
+      "caseSensitive": true
+    },
+    {
+      "sourceChar": "J",
+      "targetChar": "વ",
+      "caseSensitive": true
+    },
+    {
+      "sourceChar": "K",
+      "targetChar": "છ",
+      "caseSensitive": true
+    },
+    {
+      "sourceChar": "L",
+      "targetChar": "ટ",
+      "caseSensitive": true
+    },
+    {
+      "sourceChar": "M",
+      "targetChar": "ઈ",
+      "caseSensitive": true
+    },
+    {
+      "sourceChar": "N",
+      "targetChar": "ફ",
+      "caseSensitive": true
+    },
+    {
+      "sourceChar": "O",
+      "targetChar": "ફ",
+      "caseSensitive": true
+    },
+    {
+      "sourceChar": "P",
+      "targetChar": ".",
+      "caseSensitive": true
+    },
+    {
+      "sourceChar": "Q",
+      "targetChar": "ર",
+      "caseSensitive": true
+    },
+    {
+      "sourceChar": "R",
+      "targetChar": "ચ",
+      "caseSensitive": true
+    },
+    {
+      "sourceChar": "S",
+      "targetChar": "ક",
+      "caseSensitive": true
+    },
+    {
+      "sourceChar": "T",
+      "targetChar": "ત",
+      "caseSensitive": true
+    },
+    {
+      "sourceChar": "U",
+      "targetChar": "ગ",
+      "caseSensitive": true
+    },
+    {
+      "sourceChar": "V",
+      "targetChar": "આ",
+      "caseSensitive": true
+    },
+    {
+      "sourceChar": "W",
+      "targetChar": "ય",
+      "caseSensitive": true
+    },
+    {
+      "sourceChar": "X",
+      "targetChar": "ષ",
+      "caseSensitive": true
+    },
+    {
+      "sourceChar": "Y",
+      "targetChar": "ય",
+      "caseSensitive": true
+    },
+    {
+      "sourceChar": "Z",
+      "targetChar": "ઝ",
+      "caseSensitive": true
+    },
+    {
+      "sourceChar": "a",
+      "targetChar": "બ",
+      "caseSensitive": true
+    },
+    {
+      "sourceChar": "b",
+      "targetChar": "ખ",
+      "caseSensitive": true
+    },
+    {
+      "sourceChar": "c",
+      "targetChar": "'",
+      "caseSensitive": true
+    },
+    {
+      "sourceChar": "d",
+      "targetChar": "ત",
+      "caseSensitive": true
+    },
+    {
+      "sourceChar": "e",
+      "targetChar": "બ",
+      "caseSensitive": true
+    },
+    {
+      "sourceChar": "f",
+      "targetChar": ")",
+      "caseSensitive": true
+    },
+    {
+      "sourceChar": "g",
+      "targetChar": "ન",
+      "caseSensitive": true
+    },
+    {
+      "sourceChar": "h",
+      "targetChar": "ગ",
+      "caseSensitive": true
+    },
+    {
+      "sourceChar": "i",
+      "targetChar": "ય",
+      "caseSensitive": true
+    },
+    {
+      "sourceChar": "j",
+      "targetChar": "ચ",
+      "caseSensitive": true
+    },
+    {
+      "sourceChar": "k",
+      "targetChar": "છ",
+      "caseSensitive": true
+    },
+    {
+      "sourceChar": "l",
+      "targetChar": "ત",
+      "caseSensitive": true
+    },
+    {
+      "sourceChar": "m",
+      "targetChar": "?",
+      "caseSensitive": true
+    },
+    {
+      "sourceChar": "n",
+      "targetChar": "વ",
+      "caseSensitive": true
+    },
+    {
+      "sourceChar": "o",
+      "targetChar": ":",
+      "caseSensitive": true
+    },
+    {
+      "sourceChar": "p",
+      "targetChar": "ફ",
+      "caseSensitive": true
+    },
+    {
+      "sourceChar": "q",
+      "targetChar": "/",
+      "caseSensitive": true
+    },
+    {
+      "sourceChar": "r",
+      "targetChar": "ઝ",
+      "caseSensitive": true
+    },
+    {
+      "sourceChar": "s",
+      "targetChar": "(",
+      "caseSensitive": true
+    },
+    {
+      "sourceChar": "t",
+      "targetChar": "ર",
+      "caseSensitive": true
+    },
+    {
+      "sourceChar": "u",
+      "targetChar": "ગ",
+      "caseSensitive": true
+    },
+    {
+      "sourceChar": "v",
+      "targetChar": "-",
+      "caseSensitive": true
+    },
+    {
+      "sourceChar": "w",
+      "targetChar": "ફ",
+      "caseSensitive": true
+    },
+    {
+      "sourceChar": "x",
+      "targetChar": "ઝ",
+      "caseSensitive": true
+    },
+    {
+      "sourceChar": "y",
+      "targetChar": "ઝ",
+      "caseSensitive": true
+    },
+    {
+      "sourceChar": "z",
+      "targetChar": "ષ",
+      "caseSensitive": true
+    },
+    {
+      "sourceChar": "0",
+      "targetChar": "ડ",
+      "caseSensitive": true
+    },
+    {
+      "sourceChar": "1",
+      "targetChar": "૧",
+      "caseSensitive": true
+    },
+    {
+      "sourceChar": "2",
+      "targetChar": "૨",
+      "caseSensitive": true
+    },
+    {
+      "sourceChar": "3",
+      "targetChar": "૩",
+      "caseSensitive": true
+    },
+    {
+      "sourceChar": "4",
+      "targetChar": "૪",
+      "caseSensitive": true
+    },
+    {
+      "sourceChar": "5",
+      "targetChar": "૫",
+      "caseSensitive": true
+    },
+    {
+      "sourceChar": "6",
+      "targetChar": "૬",
+      "caseSensitive": true
+    },
+    {
+      "sourceChar": "7",
+      "targetChar": "૭",
+      "caseSensitive": true
+    },
+    {
+      "sourceChar": "8",
+      "targetChar": "૮",
+      "caseSensitive": true
+    },
+    {
+      "sourceChar": "9",
+      "targetChar": "૯",
+      "caseSensitive": true
+    },
+    {
+      "sourceChar": "!",
+      "targetChar": "૧",
+      "caseSensitive": true
+    },
+    {
+      "sourceChar": "@",
+      "targetChar": "૭",
+      "caseSensitive": true
+    },
+    {
+      "sourceChar": "#",
+      "targetChar": "૩",
+      "caseSensitive": true
+    },
+    {
+      "sourceChar": "$",
+      "targetChar": "૪",
+      "caseSensitive": true
+    },
+    {
+      "sourceChar": "%",
+      "targetChar": "૫",
+      "caseSensitive": true
+    },
+    {
+      "sourceChar": "^",
+      "targetChar": "૬",
+      "caseSensitive": true
+    },
+    {
+      "sourceChar": "&",
+      "targetChar": "૫",
+      "caseSensitive": true
+    },
+    {
+      "sourceChar": "*",
+      "targetChar": "૦",
+      "caseSensitive": true
+    },
+    {
+      "sourceChar": "(",
+      "targetChar": "૮",
+      "caseSensitive": true
+    },
+    {
+      "sourceChar": ")",
+      "targetChar": "૯",
+      "caseSensitive": true
+    },
+    {
+      "sourceChar": "-",
+      "targetChar": "૮",
+      "caseSensitive": true
+    },
+    {
+      "sourceChar": "_",
+      "targetChar": "૦",
+      "caseSensitive": true
+    }
+  ],
+  "configuration": {
+    "name": "English to Gujarati Mapping",
+    "description": "Complete character mapping from English letters, numbers and symbols to Gujarati script",
+    "isDefault": false
+  }
+}
