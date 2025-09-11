@@ -1,10 +1,21 @@
-import type { Express } from "express";
+import type { Express, Request, Response } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import { insertMappingRuleSchema, insertMappingConfigurationSchema, mappingFileSchema } from "@shared/schema";
 import multer from "multer";
 
-const upload = multer({ storage: multer.memoryStorage() });
+// Extend Express Request type to include file from multer
+interface MulterRequest extends Request {
+  file?: Express.Multer.File;
+}
+
+const upload = multer({ 
+  storage: multer.memoryStorage(),
+  limits: {
+    fileSize: 10 * 1024 * 1024, // 10MB
+    files: 1
+  }
+});
 
 export async function registerRoutes(app: Express): Promise<Server> {
   
@@ -50,6 +61,18 @@ export async function registerRoutes(app: Express): Promise<Server> {
       res.status(204).send();
     } catch (error) {
       res.status(500).json({ message: "Failed to delete mapping rule" });
+    }
+  });
+
+  app.delete("/api/mapping-rules", async (req: Request, res: Response) => {
+    try {
+      const deletedCount = await storage.clearAllMappingRules();
+      res.json({ 
+        message: `Successfully deleted ${deletedCount} mapping rules`,
+        deletedCount 
+      });
+    } catch (error) {
+      res.status(500).json({ message: "Failed to clear all mapping rules" });
     }
   });
 
@@ -111,7 +134,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
   });
 
   // File Upload for Mapping Configurations
-  app.post("/api/mapping-rules/import", upload.single("file"), async (req, res) => {
+  app.post("/api/mapping-rules/import", upload.single("file"), async (req: MulterRequest, res: Response) => {
     try {
       if (!req.file) {
         return res.status(400).json({ message: "No file uploaded" });
@@ -127,19 +150,19 @@ export async function registerRoutes(app: Express): Promise<Server> {
         parsedData = JSON.parse(fileContent);
       } else if (fileName.endsWith(".csv")) {
         // Simple CSV parsing for source,target format
-        const lines = fileContent.split("\n").filter(line => line.trim());
-        const rules = lines.slice(1).map(line => {
-          const [sourceChar, targetChar] = line.split(",").map(s => s.trim());
+        const lines = fileContent.split("\n").filter((line: string) => line.trim());
+        const rules = lines.slice(1).map((line: string) => {
+          const [sourceChar, targetChar] = line.split(",").map((s: string) => s.trim());
           return { sourceChar, targetChar, caseSensitive: true };
         });
         parsedData = { rules };
       } else if (fileName.endsWith(".txt")) {
         // Simple text parsing for "source = target" format
-        const lines = fileContent.split("\n").filter(line => line.trim());
-        const rules = lines.map(line => {
-          const [sourceChar, targetChar] = line.split("=").map(s => s.trim());
+        const lines = fileContent.split("\n").filter((line: string) => line.trim());
+        const rules = lines.map((line: string) => {
+          const [sourceChar, targetChar] = line.split("=").map((s: string) => s.trim());
           return { sourceChar, targetChar, caseSensitive: true };
-        }).filter(rule => rule.sourceChar && rule.targetChar);
+        }).filter((rule: any) => rule.sourceChar && rule.targetChar);
         parsedData = { rules };
       } else {
         return res.status(400).json({ message: "Unsupported file format. Use JSON, CSV, or TXT." });
@@ -181,7 +204,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
       }
 
       const rules = await storage.getMappingRules();
-      const activeRules = rules.filter(rule => rule.isActive);
+      const activeRules = rules.filter((rule: any) => rule.isActive);
       
       // Apply Gujarati text normalization first
       const { normalizeGujaratiText } = await import("@shared/text-utils");

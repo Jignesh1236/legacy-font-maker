@@ -6,7 +6,7 @@ import { Input } from "@/components/ui/input";
 import { useToast } from "@/hooks/use-toast";
 import { apiRequest } from "@/lib/queryClient";
 import { MappingRule, InsertMappingRule } from "@shared/schema";
-import { Plus, Upload, Trash2, ArrowRight, Download } from "lucide-react";
+import { Plus, Upload, Trash2, ArrowRight, Download, AlertTriangle } from "lucide-react";
 import { parseImportFile } from "@/lib/mapping-utils";
 import { GujaratiCharacterSelector } from "./gujarati-character-selector";
 
@@ -74,6 +74,27 @@ export function MappingConfiguration() {
       toast({
         title: "Error",
         description: "Failed to delete mapping rule.",
+        variant: "destructive",
+      });
+    },
+  });
+
+  const clearAllRulesMutation = useMutation({
+    mutationFn: async () => {
+      const response = await apiRequest("DELETE", "/api/mapping-rules");
+      return response.json();
+    },
+    onSuccess: (data) => {
+      queryClient.invalidateQueries({ queryKey: ["/api/mapping-rules"] });
+      toast({
+        title: "All rules cleared",
+        description: data.message,
+      });
+    },
+    onError: () => {
+      toast({
+        title: "Error",
+        description: "Failed to clear all mapping rules.",
         variant: "destructive",
       });
     },
@@ -255,6 +276,28 @@ export function MappingConfiguration() {
             >
               <Download className="h-4 w-4 mr-1" />
               Export
+            </Button>
+            <Button 
+              variant="destructive" 
+              size="sm" 
+              onClick={() => {
+                if (mappingRules.length === 0) {
+                  toast({
+                    title: "No rules to clear",
+                    description: "There are no mapping rules to delete.",
+                    variant: "destructive",
+                  });
+                  return;
+                }
+                if (confirm(`Are you sure you want to delete all ${mappingRules.length} mapping rules? This action cannot be undone.`)) {
+                  clearAllRulesMutation.mutate();
+                }
+              }}
+              disabled={mappingRules.length === 0 || clearAllRulesMutation.isPending}
+              data-testid="button-clear-all"
+            >
+              <AlertTriangle className="h-4 w-4 mr-1" />
+              Clear All
             </Button>
           </div>
         </div>

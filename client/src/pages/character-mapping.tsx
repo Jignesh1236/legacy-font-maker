@@ -23,7 +23,12 @@ export default function CharacterMapping() {
               </div>
             </div>
             <div className="flex items-center space-x-3">
-              <Button variant="ghost" size="sm" data-testid="button-help">
+              <Button 
+                variant="ghost" 
+                size="sm" 
+                onClick={() => window.open('https://discord.gg/rYHX8cfbYT', '_blank')}
+                data-testid="button-help"
+              >
                 <HelpCircle className="h-4 w-4 mr-2" />
                 Help
               </Button>
