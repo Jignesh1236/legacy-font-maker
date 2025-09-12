@@ -4,11 +4,15 @@ import { MappingConfiguration } from "@/components/mapping-configuration";
 import { TextConversionArea } from "@/components/text-conversion-area";
 import { AdvancedOptions } from "@/components/advanced-options";
 import { Statistics } from "@/components/statistics";
+import { UserTutorial } from "@/components/user-tutorial";
 import { Languages, HelpCircle, Save } from "lucide-react";
 
 export default function CharacterMapping() {
   return (
     <div className="min-h-screen bg-background">
+      {/* Tutorial Component */}
+      <UserTutorial />
+      
       {/* Header */}
       <header className="bg-card border-b border-border shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
